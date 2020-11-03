@@ -1,0 +1,11 @@
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+</head>
+
+<h1 id="header">List of Users</h1>
+
+<ul></ul>
+    <% @users.each do |person| %>
+        <li><%= link_to person.name, user_path(person) %></li>
+    <% end %>
+</ul>

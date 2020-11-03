@@ -1,0 +1,11 @@
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+</head>
+
+<h1 id="header">List of Ingredients</h1>
+
+<ul>
+    <% @ingredients.each do |item| %>
+        <li><%= link_to item.name, item %> has <%= item.users.count %> people with allergies</li>
+    <% end %>
+</ul>

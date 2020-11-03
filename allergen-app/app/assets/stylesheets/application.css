@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+#header {
+    font-family: 'Itim', cursive;
+
+}
+
+#showname {
+    font-family: 'Permanent Marker', cursive;
+}

@@ -1,0 +1,12 @@
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<h1 id="showname"> <%= @recipe.name %></h1>
+
+<h3> Ingredients: </h3>
+<ul>
+    <% @recipe.ingercpe.each do |x| %>
+        <li><%= link_to x.ingredient.name, x.ingredient %>: <%= x.measurement %></li>
+        <% end %>
+</ul>

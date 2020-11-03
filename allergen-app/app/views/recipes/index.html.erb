@@ -1,0 +1,13 @@
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+</head>
+
+<h1 id="header">All Recipes</h1>
+
+<ol>
+    <% @recipes.each do |r| %>
+    <li><%= link_to r.name, r %></li>
+    <% end %>
+</ol>
+
+<%=button_to "Sort by number of ingredients" , recipes_path, method: :get, name: :sort%> <br/>

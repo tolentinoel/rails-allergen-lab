@@ -1,0 +1,16 @@
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<h1 id="showname"> <%= @user.name %></h1>
+
+<p>Allergic To:</p>
+<ul>
+    <% @user.allergens.each do |a| %>
+        <li><%= link_to a.ingredient.name, a.ingredient %> <%= button_to "Remove", a, method: :delete%></li>
+        <% end %>
+</ul>
+
+<%= link_to "Add an allergy", new_allergen_path%>
+<p>Recipes: </p>
+
