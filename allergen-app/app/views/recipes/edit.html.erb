@@ -1,2 +1,23 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<h1 id="showname"> Edit recipe</h1>
+
+<%= form_for @recipe do |f| %>
+    <% if @recipe.errors.any? %>
+        <% @recipe.errors.full_messages.each do |error| %>
+            <li><%=error%></li>
+            <% end %>
+        <% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :meal_type %>
+    <%= f.text_field :meal_type, placeholder: "Breakfast/ Lunch/ Dinner/ Sweets" %>
+    <%= f.label :user %>
+    <%= f.collection_select :user_id, User.all, :id, :name%>
+    
+    <%= f.submit %>
+    <% end %>
+    <%= button_to "Add ingredient", new_ingercpe_path, method: :get %>

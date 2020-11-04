@@ -17,5 +17,7 @@
     <%= f.text_field :meal_type, placeholder: "Breakfast/ Lunch/ Dinner/ Sweets" %>
     <%= f.label :user %>
     <%= f.collection_select :user_id, User.all, :id, :name%>
-    <%= f.submit %>
+
+        <%= f.submit %>
     <% end %>
+

@@ -3,3 +3,12 @@
 </head>
 
 <h1 id="showname"> <%= @ingredient.name %></h1>
+
+<p>Recipes: </p>
+<ul>
+    <% @ingredient.recipes.each do |a| %>
+        <li><%= link_to a.name, recipe_path(a)%></li>
+    <% end %>
+</ul>
+
+<%= link_to "Back to the ingredient list", ingredients_path%>

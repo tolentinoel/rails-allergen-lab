@@ -5,6 +5,13 @@
 <h1 id="showname"> Add an allergy</h1>
 
 <%= form_for @allergen do |f| %>
+
+    <% if @allergen.errors.any? %>
+        <% @allergen.errors.full_messages.each do |error| %>
+            <li><%=error%></li>
+            <% end %>
+        <% end %>
+
     <%= f.label :user %>
     <%= f.collection_select :user_id, User.all, :id, :name%>
     <%= f.label :user %>

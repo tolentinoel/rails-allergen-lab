@@ -1,6 +1,6 @@
-class Ingercpes < ApplicationController
+class IngercpesController < ApplicationController
 
-def index
+  def index
     @ingercpes = Ingercpe.all
   end
 
@@ -15,9 +15,8 @@ def index
   def create
     @ingercpe = Ingercpe.new(ingercpe_params)
 
-        if @ingercpe.valid?
-            @ingercpe.save
-            redirect_to ingercpe.recipe
+        if @ingercpe.save
+            redirect_to @ingercpe.recipe
         else
             render :new
         end
@@ -46,5 +45,7 @@ def index
   end
 
   def ingercpe_params
-    params.require(:ingercpe).permit(:name)
+    params.require(:ingercpe).permit(:ingredient_id, :recipe_id, :measurement)
   end
+
+end

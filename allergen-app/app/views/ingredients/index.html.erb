@@ -1,11 +1,15 @@
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
-<h1 id="header">List of Ingredients</h1>
+
+<h1 id="showname">All ingredients</h1>
 
 <ul>
     <% @ingredients.each do |item| %>
         <li><%= link_to item.name, item %> has <%= item.users.count %> people with allergies</li>
     <% end %>
 </ul>
+
+<button><%= link_to "Add ingredient", new_ingredient_path %></button>
+<button><%= link_to "Recipes", recipes_path %></button>

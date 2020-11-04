@@ -4,9 +4,16 @@
 
 <h1 id="showname"> <%= @recipe.name %></h1>
 
+<h3> Meal Type: </h3><p><%= @recipe.meal_type%></p>
+
 <h3> Ingredients: </h3>
 <ul>
     <% @recipe.ingercpe.each do |x| %>
         <li><%= link_to x.ingredient.name, x.ingredient %>: <%= x.measurement %></li>
         <% end %>
 </ul>
+
+<%= button_to "Edit recipe", edit_recipe_path, method: :get %>
+<%= button_to "Delete this recipe", @recipe, method: :delete, data: {confirm: "Are you sure?"} %>
+<br>
+<%= link_to "Back to the user", user_path(@recipe.user)%>

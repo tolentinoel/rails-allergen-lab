@@ -1,8 +1,9 @@
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
-<h1 id="header">All Recipes</h1>
+
+<h1 id="showname">All Recipes</h1>
 
 <ol>
     <% @recipes.each do |r| %>
@@ -11,3 +12,4 @@
 </ol>
 
 <%=button_to "Sort by number of ingredients" , recipes_path, method: :get, name: :sort%> <br/>
+<button><%= link_to "Add a Recipe", new_recipe_path %></button>

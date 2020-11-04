@@ -1,2 +1,18 @@
-<h1>Ingredients#new</h1>
-<p>Find me in app/views/ingredients/new.html.erb</p>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<h1 id="showname"> Add an ingredient</h1>
+
+<%= form_for @ingredient do |f| %>
+    <% if @ingredient.errors.any? %>
+        <% @ingredient.errors.full_messages.each do |error| %>
+            <li><%=error%></li>
+            <% end %>
+        <% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+   
+    <%= f.submit %>
+    <% end %>
